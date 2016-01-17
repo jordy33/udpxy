@@ -2,7 +2,7 @@
 * Install OSMC in your raspberry: https://osmc.tv/
 * Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
 * The default user is osmc and password is osmc
-* First we have Install the firmware relative to your adapter in my case i have a prof7500
+* First we have Install the firmware relative to your adapter in my case i have a prof7500 if you have other adapter install firmware and skip to dmesg | grep dvb below.
 
 sudo apt-get -y install git
 
