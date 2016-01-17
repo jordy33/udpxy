@@ -1,20 +1,19 @@
 ## udpxy ##
-
+* Install OSMC in your raspberry: https://osmc.tv/
 * Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
-
 * The default user is osmc and password is osmc
-
 * If you are on a mac type ssh osmc@192.168.1.66 (substitute with your ip)
-
-* Firstt we have Install the firmware relative to your adapter in my case i have a prof7500
+* First we have Install the firmware relative to your adapter in my case i have a prof7500
 
 sudo apt-get -y install git
 
-git clone https://github.com/jordy33/prof7500.git
+git clone https://github.com/jordy33/udpxy.git
 
-cd prof7500
+cd udpxy/prof7500
 
 sudo cp dvb-usb-p7500.fw /lib/firmware/.
+* If you download the osmc version 20155.11.1 then you can use the following path for the stv0900.ko If you dont have downloaded this version you must path the stv0900.ko following this guide: https://rickcaylor.websitetoolbox.com/post/linux-highrate-binary-patch-for-stv090-6986520?highlight=stv0900
+
 sudo cp stv0900.ko /lib/modules/4.3.0-10-osmc/kernel/drivers/media/dvb-frontends/stv0900.ko
 reboot
 
@@ -30,20 +29,20 @@ dmesg | grep dvb
 * That means that tvheadend is installed
 * In a web browser open http://192.168.1.66:9981 (substitute with your ip)
 * The user is osmc and the password is osm (set 89w and sbn channel)
-*
-
-git clone https://github.com/jordy33/udpxy.git
-
+* Scan the channel: 3860 2600 H PSK/8 3/4 .35
+* Tune SBN to check that everything is working
+* Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
 * Then we have to compile udpproxy
 
-cd udpxy
-
+cd /home/osmc/udpxy/udpxy
+sudo apt-get -y install build-essential 
+sudo make
 sudo make install
 
 cd ..
 
 * Add permissions to run the start-up script
-
+sudo apt-get -y install dvb-apps
 sudo chmod 777 run.sh
 
 * Next we have to Edit /etc/rc.local with nano to enable to run the program at startup
@@ -52,7 +51,7 @@ sudo nano /etc/rc.local
 
 *At the end of the file before exit 0 insert the following lines:
 
-/home/osmc/run.sh
+/home/osmc/udpxy/run.sh
 
 * save with ctrl-x
 
