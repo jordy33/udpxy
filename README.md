@@ -34,14 +34,19 @@ dmesg | grep dvb
 * Then we have to compile udpproxy
 
 cd /home/osmc/udpxy/udpxy
+
 sudo apt-get -y install build-essential 
+
 sudo make
+
 sudo make install
 
 cd ..
 
 * Add permissions to run the start-up script
+
 sudo apt-get -y install dvb-apps
+
 sudo chmod 777 run.sh
 
 * Next we have to Edit /etc/rc.local with nano to enable to run the program at startup
