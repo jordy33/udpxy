@@ -2,9 +2,35 @@
 
 * Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
 
-* The default password is osmc
+* The default user is osmc and password is osmc
 
-* First we have to download the software
+* If you are on a mac type ssh osmc@192.168.1.66 (substitute with your ip)
+
+* Firstt we have Install the firmware relative to your adapter in my case i have a prof7500
+
+sudo apt-get -y install git
+
+git clone https://github.com/jordy33/prof7500.git
+
+cd prof7500
+
+sudo cp dvb-usb-p7500.fw /lib/firmware/.
+sudo cp stv0900.ko /lib/modules/4.3.0-10-osmc/kernel/drivers/media/dvb-frontends/stv0900.ko
+reboot
+
+* Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
+
+* Check that your adapter is running
+
+dmesg | grep dvb
+
+* go to your raspberry pi osmc installation and install tvheadend 
+* /settings/myosmc  select shopping cart and look for tvheadend
+* wait until a a message appears Update: Operations succesfully completed
+* That means that tvheadend is installed
+* In a web browser open http://192.168.1.66:9981 (substitute with your ip)
+* The user is osmc and the password is osm (set 89w and sbn channel)
+*
 
 git clone https://github.com/jordy33/udpxy.git
 
