@@ -2,7 +2,6 @@
 * Install OSMC in your raspberry: https://osmc.tv/
 * Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
 * The default user is osmc and password is osmc
-* If you are on a mac type ssh osmc@192.168.1.66 (substitute with your ip)
 * First we have Install the firmware relative to your adapter in my case i have a prof7500
 
 sudo apt-get -y install git
