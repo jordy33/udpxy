@@ -14,6 +14,7 @@ sudo cp dvb-usb-p7500.fw /lib/firmware/.
 * If you download the osmc version 2015.11.1 then you can use the patch that i included for the stv0900.ko If you dont have downloaded this version you must patch the stv0900.ko, follow this guide: https://rickcaylor.websitetoolbox.com/post/linux-highrate-binary-patch-for-stv090-6986520?highlight=stv0900
 
 sudo cp stv0900.ko /lib/modules/4.3.0-10-osmc/kernel/drivers/media/dvb-frontends/stv0900.ko
+
 reboot
 
 * Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
