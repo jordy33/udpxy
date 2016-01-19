@@ -28,7 +28,7 @@ dmesg | grep dvb
 * wait until a a message appears Update: Operations succesfully completed
 * That means that tvheadend is installed
 * In a web browser open http://192.168.1.66:9981 (substitute with your ip)
-* The user is osmc and the password is osm (set 89w and sbn channel)
+* The user is osmc and the password is osmc (set 89w and sbn channel)
 * Scan the channel: 3860 2600 H PSK/8 3/4 .35
 * Tune SBN to check that everything is working
 * Log into you raspberry with putty (windows) or ssh (OSX, Linux distro)
