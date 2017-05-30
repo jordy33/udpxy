@@ -1,0 +1,9 @@
+Open a copy of the stv0900.ko file in your preferred hex editor and search for the following hex values:
+
+73 f5 c0 00 73 f3 c0 00
+
+Change the two c0 bytes to 00:
+
+73 f5 00 00 73 f3 00 00
+
+Save and replace the stv0900.ko file wherever it was
